@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Clip Finder — identify any clip</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="filmstrip filmstrip--left" aria-hidden="true"></div>
+<div class="filmstrip filmstrip--right" aria-hidden="true"></div>
+
+<main>
+  <header class="hero">
+    <div class="eyebrow"><span class="rec-dot"></span> DIALOGUE-MATCHED SCENE LOOKUP</div>
+    <h1>Paste the clip.<br>We'll find the <span class="hl">source.</span></h1>
+    <p class="sub">Drop in a link to a movie or TV clip posted on X. We transcribe the dialogue, match it against subtitle timing, and hand you back the title and roughly where to start watching.</p>
+  </header>
+
+  <section class="console" id="console">
+    <form id="analyzeForm" class="slate">
+      <div class="slate-label">CLIP URL</div>
+      <input
+        id="tweetUrl"
+        type="url"
+        placeholder="https://x.com/username/status/1234567890"
+        required
+        autocomplete="off"
+      />
+      <button type="submit" id="submitBtn">Find the scene</button>
+    </form>
+
+    <div class="readout" id="readout" hidden>
+      <div class="readout-timecode" id="timecode">00:00:00</div>
+      <ul class="steps" id="stepsList"></ul>
+    </div>
+
+    <div class="result" id="result" hidden></div>
+  </section>
+
+  <footer>
+    <p>Works best on clips with clear, audible dialogue and a caption that mentions (or hints at) the title. Silent clips, music-only clips, and totally uncaptioned posts won't have enough to go on.</p>
+  </footer>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
