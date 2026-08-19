@@ -4,7 +4,7 @@
   "description": "Paste a Twitter/X clip, find the movie or show it's from and roughly where it falls.",
   "main": "server.js",
   "type": "commonjs",
-  "engines": { "node": ">=18.0.0" }
+  "engines": { "node": ">=18.0.0" },
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js"
